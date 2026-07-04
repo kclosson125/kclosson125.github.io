@@ -316,8 +316,83 @@ h1 {
   line-height: 1.5;
 }
 
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.work-card {
+  min-height: 9.5rem;
+  border: 1px solid rgba(90, 36, 199, 0.14);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 1.2rem;
+  box-shadow: 0 1rem 2.4rem rgba(23, 20, 29, 0.08);
+}
+
+.compact-work-card {
+  min-height: 7.25rem;
+}
+
+.work-status {
+  margin: 0 0 0.7rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.work-card h3 {
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+  font-size: 1.18rem;
+  line-height: 1.18;
+}
+
+.work-card p:not(.work-status) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.work-list p {
+  position: relative;
+  min-height: 3.35rem;
+  margin: 0;
+  border: 1px solid rgba(90, 36, 199, 0.14);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0.95rem 1rem 0.95rem 2.25rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  box-shadow: 0 0.8rem 1.8rem rgba(23, 20, 29, 0.06);
+}
+
+.work-list p::before {
+  position: absolute;
+  top: 1.25rem;
+  left: 1rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
 @media (max-width: 920px) {
-  .tool-grid {
+  .tool-grid,
+  .work-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -356,11 +431,14 @@ h1 {
     padding: 0.75rem 1rem;
   }
 
-  .tool-grid {
+  .tool-grid,
+  .work-grid,
+  .work-list {
     grid-template-columns: 1fr;
   }
 
-  .tool-card {
+  .tool-card,
+  .work-card {
     min-height: auto;
   }
 }
