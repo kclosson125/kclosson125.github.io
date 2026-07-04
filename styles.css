@@ -1,0 +1,178 @@
+:root {
+  color-scheme: light;
+  --ink: #17141d;
+  --muted: #625a6d;
+  --paper: #faf8ff;
+  --surface: #eee7fb;
+  --accent: #5a24c7;
+  --accent-deep: #321069;
+  --ring: rgba(90, 36, 199, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--paper);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(90, 36, 199, 0.15), transparent 32rem),
+    linear-gradient(135deg, #ffffff 0%, var(--paper) 58%, #f5f1fb 100%);
+}
+
+.hero {
+  display: grid;
+  min-height: 100vh;
+  padding: clamp(1.25rem, 4vw, 4rem);
+  place-items: center;
+}
+
+.hero-inner {
+  width: min(100%, 58rem);
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.wordmark {
+  display: block;
+  width: min(100%, 38rem);
+  height: auto;
+  margin: 0 auto clamp(2rem, 5vw, 4rem);
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(23, 20, 29, 0.12);
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 850;
+  letter-spacing: 0;
+  line-height: 0.92;
+}
+
+.intro {
+  width: min(100%, 42rem);
+  margin: clamp(1.25rem, 3vw, 2rem) auto 0;
+  color: var(--muted);
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.button {
+  display: inline-flex;
+  min-width: 10.5rem;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.9rem 1.35rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 0.35rem var(--ring);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 1rem 2.5rem rgba(90, 36, 199, 0.23);
+}
+
+.button-primary:hover {
+  background: var(--accent-deep);
+}
+
+.button-secondary {
+  border-color: rgba(90, 36, 199, 0.24);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--accent-deep);
+}
+
+.button-secondary:hover {
+  border-color: rgba(90, 36, 199, 0.5);
+  background: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    align-items: start;
+    padding-top: 2rem;
+  }
+
+  .wordmark {
+    border-radius: 0.75rem;
+  }
+
+  .actions {
+    display: grid;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
