@@ -267,6 +267,17 @@ h1 {
   max-height: 1.8rem;
 }
 
+.app-icon-logo {
+  overflow: hidden;
+  background: transparent;
+}
+
+.app-icon-logo img {
+  width: 100%;
+  max-height: none;
+  border-radius: 0.5rem;
+}
+
 .tool-logo span {
   color: var(--accent-deep);
   font-size: 0.92rem;
